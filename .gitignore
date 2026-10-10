@@ -217,4 +217,36 @@ marimo/_lsp/
 __marimo__/
 
 # Streamlit
-.streamlit/secrets.toml
+.streamlit/secrets.toml 
+ 
+# =====================================
+# RetailPulse - Project Specific Rules
+# =====================================
+
+# Dataset files - do not push to GitHub
+data/
+*.csv
+*.parquet
+
+# Large model files
+*.pkl
+*.joblib
+*.h5
+*.pt
+*.onnx
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Local IDE settings
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
