@@ -13,12 +13,12 @@ def load_data():
     DEMO_DIR.mkdir(parents=True, exist_ok=True)
     
     print("Loading Zidio datasets...")
-    sales_df = pd.read_csv(PROJECT_ROOT / "sales_transaction.csv")
-    customer_df = pd.read_csv(PROJECT_ROOT / "customer_master.csv")
-    sku_df = pd.read_csv(PROJECT_ROOT / "sku_master.csv")
-    store_df = pd.read_csv(PROJECT_ROOT / "store_master.csv")
-    promo_df = pd.read_csv(PROJECT_ROOT / "promotions.csv")
-    inventory_df = pd.read_csv(PROJECT_ROOT / "inventory_snapshot.csv")
+    sales_df = pd.read_csv(DATA_DIR / "sales_transactions.csv")
+    customer_df = pd.read_csv(DATA_DIR / "customer_master.csv")
+    sku_df = pd.read_csv(DATA_DIR / "sku_master.csv")
+    store_df = pd.read_csv(DATA_DIR / "store_master.csv")
+    promo_df = pd.read_csv(DATA_DIR / "promotions.csv")
+    inventory_df = pd.read_csv(DATA_DIR / "inventory_snapshot.csv")
     
     return sales_df, customer_df, sku_df, store_df, promo_df, inventory_df
 
@@ -60,6 +60,19 @@ def main():
             monetary=('total_value', 'sum')
         ).reset_index()
         rfm.to_csv(DEMO_DIR / "customer_rfm.csv", index=False)
+                # 4. Generate Inventory Summary with SKU Details
+        inventory_summary = inventory_df.merge(
+            sku_df,
+            on="sku_id",
+            how="left"
+        )
+
+        inventory_summary.to_csv(
+            DEMO_DIR / "inventory_summary.csv",
+            index=False
+        )
+
+        print("Inventory summary table generated successfully!")
         
         print("Demo summary tables generated successfully in data/demo/!")
 
@@ -69,10 +82,4 @@ def main():
 if __name__ == "__main__":
     main()
 
-# - Inventory summary with SKU details & flags if available
-inventory_df = pd.read_csv(PROJECT_ROOT / "inventory_snapshot.csv")
-sku_df = pd.read_csv(PROJECT_ROOT / "sku_master.csv")
-
-inventory_summary = inventory_df.merge(sku_df, on="sku_id", how="left")
-inventory_summary.to_csv(DEMO_DIR / "inventory_summary.csv", index=False)
-print("Inventory summary table generated successfully!")
+ 
