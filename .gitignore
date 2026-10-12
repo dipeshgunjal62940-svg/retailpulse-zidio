@@ -247,6 +247,13 @@ data/
 .vscode/
 .idea/
 
+# =====================================
+# RetailPulse - Exception for Demo Files
+# =====================================
+!data/
+!data/demo/
+!data/demo/*.csv
+
 # Operating system files
 .DS_Store
 Thumbs.db
