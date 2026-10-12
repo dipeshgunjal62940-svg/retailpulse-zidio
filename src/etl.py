@@ -68,3 +68,11 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# - Inventory summary with SKU details & flags if available
+inventory_df = pd.read_csv(PROJECT_ROOT / "inventory_snapshot.csv")
+sku_df = pd.read_csv(PROJECT_ROOT / "sku_master.csv")
+
+inventory_summary = inventory_df.merge(sku_df, on="sku_id", how="left")
+inventory_summary.to_csv(DEMO_DIR / "inventory_summary.csv", index=False)
+print("Inventory summary table generated successfully!")
