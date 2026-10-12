@@ -13,7 +13,7 @@ def load_data():
     DEMO_DIR.mkdir(parents=True, exist_ok=True)
     
     print("Loading Zidio datasets...")
-    sales_df = pd.read_csv(PROJECT_ROOT / "sales_sample.csv")
+    sales_df = pd.read_csv(PROJECT_ROOT / "sales_transaction.csv")
     customer_df = pd.read_csv(PROJECT_ROOT / "customer_master.csv")
     sku_df = pd.read_csv(PROJECT_ROOT / "sku_master.csv")
     store_df = pd.read_csv(PROJECT_ROOT / "store_master.csv")
