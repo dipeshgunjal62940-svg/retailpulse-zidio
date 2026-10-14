@@ -1,5 +1,5 @@
  # 🛒 RetailPulse: AI-Powered Customer Analytics & Demand Forecasting Platform
-**Zidio Data Analytics & ETL Project (Submission Deadline: 20 October 2026)**
+
 
 ---
 
