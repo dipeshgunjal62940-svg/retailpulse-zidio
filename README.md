@@ -4,15 +4,12 @@
 ---
 
 ## 📌 Project Overview
-RetailPulse is an enterprise-grade retail analytics platform designed to process, clean, and analyze a massive dataset of nearly **10 million transactions** ($9,972,038$ rows). The platform provides crucial insights into sales performance, customer purchasing behavior (RFM), inventory management, and demand forecasting across multiple stores and SKUs.
+RetailPulse is an enterprise-grade retail analytics platform designed to process, clean, and analyze a massive dataset of nearly **10 million transactions** (9,972,038 rows). The platform provides crucial insights into sales performance, customer purchasing behavior (RFM), inventory management, and demand forecasting across multiple stores and SKUs.
 
 ---
 
 ## 👥 Team & Responsibilities
-* **Data & ETL Lead:** Dipesh Gunjal (Pipeline architecture, data cleaning, masking, and repository management)
-* **Dashboard Lead (Role D):** Visualization & Streamlit deployment using pre-aggregated demo tables
-* **Segmentation Lead (Role B):** Customer RFM analysis and clustering models
-* **Forecasting Lead (Role C):** Time-series sales prediction and inventory optimization
+ 
 
 ---
 
